@@ -1,8 +1,9 @@
 // define custom seraches
-const any = 'q="university"OR"fashion"';
 
-async function getNews(search,) {
-    data = await fetch(`https://newsapi.org/v2/everything?${search}&apiKey=5dd14bd3df04419096998429a02b86fc&sortBy=popularity`)
+const any = 'q=fashion';
+
+async function getNews(search) {
+   let data = await fetch(`https://newsapi.org/v2/everything?${search}&apiKey=5dd14bd3df04419096998429a02b86fc&sortBy=popularity`)
         .then(res => res.json())
         .then(data => data)
         .catch(err => {
@@ -19,7 +20,7 @@ async function setNews(node, data) {
     }else if (node.nodeName == "A") {
         node.href = data;
     }else {
-        node.innertText = data;
+        node.innerText = data;
     }
     console.log(node.nodeName)
 }
@@ -27,11 +28,11 @@ async function setNews(node, data) {
 // for each node under news update
 async function updateNodes(nodeSel) {
     try {
-        let { articles } = await getNews(any),
+        let { articles } = await getNews("q=tech"),
             newsNode = document.querySelectorAll(`${nodeSel}`),
-            headline, news_text, category, news_photo, link, i = 0;
+            headline, news_text, category, news_photo, link , i = 0;
 
-        console.log(articles)
+        console.log(articles,newsNode)
 
         for (node of newsNode) {
             // set each childs content
@@ -48,7 +49,7 @@ async function updateNodes(nodeSel) {
                 setNews(news_photo, articles[i].urlToImage)
             }
             if (link = node.querySelector("a")) {
-                setNews(news_photo, articles[i].url)
+                setNews(link, articles[i].url)
             }
             i++;
         }
@@ -56,4 +57,4 @@ async function updateNodes(nodeSel) {
 
 }
 
-updateNodes('.news');
+updateNodes('.feeds .news_box');
