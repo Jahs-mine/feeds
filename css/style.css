@@ -86,8 +86,6 @@ video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
 }
 
@@ -107,7 +105,7 @@ section {
 }
 
 body {
-    line-height: 1;
+    line-height: 1.3;
 }
 
 ol,
@@ -128,6 +126,9 @@ ul {
     font-size: 62.5%;
 }
 
+.nav .list_item,p{
+    font-size: 1.6rem
+}
 h1,
 h2,
 h3,
@@ -135,28 +136,23 @@ h4,
 h5,
 h6 {
     font-weight: bold;
-    margin: 0.3rem 0;
+    margin: 0.1rem 0;
 }
 
-h1{
-    font-size: 1.7em;
-}
 
-.date{
-    font-size: 1.3em;
-}
 .header h2 {
     color: gray;
 }
 
-.headline a {
+ a {
     color: var(--primmary-color);
     text-decoration: none;
-    font-size: inherit;
 }
 
-.nav .list_item{
-    font-size: 1.6rem;
+
+.category{
+    font-weight: bold;
+    
 }
 /***************************************************
 *LAYOUT
@@ -164,7 +160,7 @@ h1{
 body {
     min-height: 100vh;
     max-width: 100vw;
-    --top_img_height: 25rem;
+    --top_img_height: 30rem;
     --news_photo_height: 8rem;
     --primmary-color: #2f0997;
 }
@@ -226,7 +222,7 @@ div.col {
 
 .container {
     display: block;
-    padding: 0.5rem;
+    padding: 1rem 2.5rem;
 }
 
 .p1 {
@@ -240,8 +236,7 @@ div.col {
 .news_box{
     position: relative;
 }
-
-.news_box>.col {
+.top_news>.col {
     bottom: 0%;
     position: absolute;
     color: white;   
@@ -254,6 +249,7 @@ div.col {
 .top_news img {
     width: inherit;
     min-height: var(--top_img_height, 16rem);
+    height: 100%;
     display: block
 }
 
@@ -291,6 +287,8 @@ section .f_2.news_box > img {
 .sport{
     border-left: solid 0.2rem yellow;
 }
+
+
 /***************************************************
 *MEDIA QUERIES
 ****************************************************/
@@ -327,9 +325,7 @@ section .f_2.news_box > img {
 
 /* xtra-small devices*/
 @media (max-width: 319px) {
-    *,.news > *{
-        font-size: 2em;
-    }
+    
     .news .row img {
         flex-basis: 0%;
         display: none;
@@ -339,3 +335,18 @@ section .f_2.news_box > img {
     }
 
 }
+
+@media screen and (min-width: 720px){
+    .top_news .headline{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .news_box>.col {
+        bottom: 0%;
+        position: absolute;
+        color: white;   
+    }
+}
+
