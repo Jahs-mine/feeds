@@ -2,99 +2,124 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <nav class="nav container">
-        <img src="" alt="Blogspot logo" class="logo">
-        <ul class="nav_list row j_btw">
-            <!-- add dropdown menu -->
-            <!-- make links vanish on smaller screen sizes-->
-            <li class="list_item">sign-up</li>
-            <li class="list_item">Home</li>
-            <li class="list_item">Tech</li>
-            <li class="list_item">Sport</li>
-            <li class="list_item">Politics</li>
-            <li class="list_item">Trade</li>
-            <li class="list_item">Fashion</li>
-            <li class="list_item">Health</li>
-            <li class="list_item">Business</li>
-            <li class="list_item">More</li>
-            <li class="list_item">
-                <form action="" method="get" rel="search">
-                    <input type="text">
-                </form>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-sm nav ">
+        <div class="container">
+            <div class="row">
+                <a href="" class="col-11 col-sm-2 justify-center"><img src="" alt="--name logo" class="logo"></a>
+                
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse col-sm-10" id="navbarNav">
+                    <ul class="navbar-nav nav_list">
+                        <!-- add dropdown menu -->
+                        <!-- make links vanish on smaller screen sizes-->
+                        <li class="nav-item list_item">sign-up</li>
+                        <li class="nav-item list_item">Home</li>
+                        <li class="nav-item list_item">Tech</li>
+                        <li class="nav-item list_item">Sport</li>
+                        <li class="nav-item list_item">Politics</li>
+                        <li class="nav-item list_item">Trade</li>
+                        <li class="nav-item list_item">Fashion</li>
+                        <li class="nav-item list_item">Health</li>
+                        <li class="nav-item list_item">Business</li>
+                        <li class="nav-item list_item">More</li>
+                        <li class="nav-item list_item">
+                            <form action="" method="get" rel="search">
+                                <input type="text">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </nav>
     <header class="header container" id="header">
-        <div class="row j_btw">
-            <h1>Welcome to Blogspot.com</h1>
-            <h2 class="date" id="date"></h2>
+        <div class="row">
+            <h1 class="col-7">Welcome to --name.com</h1>
+            <h2 class="col-5 date text-end" id="date"></h2>
         </div>
     </header>
 
     <main class="container main" id="#main">
         <div class="row">
-            <article class="f_2 news_box top_news" id="front_page">
+            <article class="  news_box top_news" id="front_page">
                 <img src="#" alt="..." class="news_photo">
-                <div href="" class="col">
-                    <h2 class="headline"><a href="">Israel and UAE strike historic peace deal</a></h2>
+                <div href="" class="news_texts_col">
+                    <a href="">
+                        <h2 class="headline">Israel and UAE strike historic peace deal</h2>
+                    </a>
                     <p class="news_text">Israel and the UAE agree to normalise relations, making the third Israel-Arab
                         peace
                         deal </p>
                     <span class="category" id="top_news">TOP NEWS</span>
                 </div>
             </article>
-            <section class="f_2 rec">
-                <div class="row j_btw">
-                    <article class="f_2 news_box">
+            <!-- <section class="  rec">
+                <div class="row ">
+                    <article class="  news_box">
                         <img src="#" alt="..." class="news_photo">
-                        <div href="" class="col">
-                            <h2 class="headline"><a href="">Americans: Go home.Tension at Canada-US border</a></h2>
+                        <div href="" class="news_texts_col">
+                            <a href="">
+                                <h2 class="headline">Americans: Go home.Tension at Canada-US border</h2>
+                            </a>
                             <p class="news_text"></p>
                             <span class="category sport" id="sport">SPORT</span>
                         </div>
                     </article>
-                    <article class="f_2 news_box">
+                    <article class="  news_box">
                         <img src="#" alt="..." class="news_photo">
-                        <div href="" class="col">
-                            <h2 class="headline"><a href="">How will the world vaccinate seven billion people</a> </h2>
+                        <div href="" class="news_texts_col">
+                            <a href="">
+                                <h2 class="headline">How will the world vaccinate seven billion people </h2>
+                            </a>
                             <p class="news_text"></p>
                             <span id="health" class="category health">HEALTH</span>
                         </div>
                     </article>
-                    <article class="f_2 news_box">
+                    <article class="  news_box">
                         <img src="#" alt="..." class="news_photo">
-                        <div href="" class="col">
-                            <h2 class="headline"><a href=""> The online 'productivity gyms'</a></h2>
+                        <div href="" class="news_texts_col">
+                            <a href="">
+                                <h2 class="headline"> The online 'productivity gyms'</h2>
+                            </a>
                             <p class="news_text"></p>
                             <span id="tech" class="category tech">TECH</span>
                         </div>
                     </article>
-                    <article class="f_2 news_box">
+                    <article class="  news_box">
                         <img src="#" alt="..." class="news_photo">
-                        <div href="" class="col">
-                            <h2 class="headline"><a href=""> The folk singer murdered for his music</a></h2>
+                        <div href="" class="news_texts_col">
+                            <a href="">
+                                <h2 class="headline"> The folk singer murdered for his music</h2>
+                            </a>
                             <p class="news_text"></p>
                             <span id="politics" class="category politics">POLITICS</span>
                         </div>
                     </article>
                 </div>
-            </section>
+            </section> -->
         </div>
     </main>
 
     <section class="container feeds">
-        <h2 class="p1">News</h2>
+        <h2 class="">News</h2>
         <div class="row">
-            <article class="f_3 news p1">
+            <article class="news_box">
                 <div class="row">
-                    <img src="#" alt="..." class="news_photo">
-                    <div>
-                        <a href=""><h2 class="headline">Biden and Harris say Trump has left US in tatters</h2></a>
+                    <img src="#" alt="..." class="col-3 col-lg-7 news_photo">
+                    <div class="news_texts_col col-9 col-lg-11">
+                        <a href="">
+                            <h2 class="headline">Biden and Harris say Trump has left US in tatters</h2>
+                        </a>
                         <p class="news_text">Joe Biden and running mate Kamala Harris call Donald TrImp a 'whining'
                             incompetent
                             leader</p>
@@ -102,11 +127,13 @@
                     </div>
                 </div>
             </article>
-            <article class="f_3 news p1">
+            <article class=" news_box ">
                 <div class="row">
-                    <img src="#" alt="..." class="news_photo">
-                    <div>
-                        <a href=""><h2 class="headline">Women form 'solidarity chain' in Belarus protests</h2></a>
+                    <img src="#" alt="..." class="col-3 col-lg-7 news_photo ">
+                    <div class="news_texts_col col-9 col-lg-11">
+                        <a href="">
+                            <h2 class="headline">Women form 'solidarity chain' in Belarus protests</h2>
+                        </a>
                         <p class="news_text">Women take to the streets of Minsk dressed in white as they demand an end
                             to
                             police
@@ -115,11 +142,13 @@
                     </div>
                 </div>
             </article>
-            <article class="f_3 news p1">
+            <article class=" news_box ">
                 <div class="row">
-                    <img src="#" alt="..." class="news_photo">
-                    <div>
-                        <a href=""><h2 class="headline">Trump says low-pressured shower heads wont wash</h2></a>
+                    <img src="#" alt="..." class="col-3 col-lg-7 news_photo">
+                    <div class="news_texts_col col-9 col-lg-11">
+                        <a href="">
+                            <h2 class="headline">Trump says low-pressured shower heads wont wash</h2>
+                        </a>
                         <p class="news_text">The US called for rules to be eased after Donald Trump complained of issues
                             washing
                             his
@@ -131,6 +160,7 @@
         </div>
     </section>
 
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/app.js"></script>
 </body>
