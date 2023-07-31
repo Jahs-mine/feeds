@@ -8,48 +8,52 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm nav ">
-        <div class="container">
-            <div class="row">
-                <a href="" class="col-11 col-sm-2 justify-center"><img src="" alt="--name logo" class="logo"></a>
-                
+    <div class="container-fluid">
+        <nav class=" navbar navbar-expand-lg nav p-3">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse col-sm-10" id="navbarNav">
-                    <ul class="navbar-nav nav_list">
-                        <!-- add dropdown menu -->
-                        <!-- make links vanish on smaller screen sizes-->
-                        <li class="nav-item list_item">sign-up</li>
-                        <li class="nav-item list_item">Home</li>
-                        <li class="nav-item list_item">Tech</li>
-                        <li class="nav-item list_item">Sport</li>
-                        <li class="nav-item list_item">Politics</li>
-                        <li class="nav-item list_item">Trade</li>
-                        <li class="nav-item list_item">Fashion</li>
-                        <li class="nav-item list_item">Health</li>
-                        <li class="nav-item list_item">Business</li>
-                        <li class="nav-item list_item">More</li>
-                        <li class="nav-item list_item">
-                            <form action="" method="get" rel="search">
-                                <input type="text">
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+            <a href="" class="col-9 col-sm-2 justify-center"><img src="" alt="--name logo" class="logo"></a>
+
+
+            <button class="navbar-toggler col-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <svg class="navbar-toggler-icon" viewBox="0 0 100 80" width="40" height="40">
+                    <text class="visually-hidden">toggle menu</text>
+                    <rect width="100" height="10" rx="2" fill="white"></rect>
+                    <rect y= 30 width="100" height="10" rx="2" fill="white"></rect>
+                    <rect y="60" width="100" height="10" rx="2" fill="white"></rect>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav_list">
+                    <!-- add dropdown menu -->
+                    <!-- make links vanish on smaller screen sizes-->
+                    <li class="nav-item list_item">sign-up</li>
+                    <li class="nav-item list_item">Home</li>
+                    <li class="nav-item list_item">Tech</li>
+                    <li class="nav-item list_item">Sport</li>
+                    <li class="nav-item list_item">Politics</li>
+                    <li class="nav-item list_item">Trade</li>
+                    <li class="nav-item list_item">Fashion</li>
+                    <li class="nav-item list_item">Health</li>
+                    <li class="nav-item list_item">Business</li>
+                    <li class="nav-item list_item">More</li>
+                    <li class="nav-item list_item">
+                        <form action="" method="get" rel="search">
+                            <input type="text">
+                        </form>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </nav>
-    <header class="header container" id="header">
+        </nav>
+    </div>
+    <header class="header container p-3" id="header">
         <div class="row">
             <h1 class="col-7">Welcome to --name.com</h1>
             <h2 class="col-5 date text-end" id="date"></h2>
         </div>
     </header>
 
-    <main class="container main" id="#main">
+    <main class="container main p-3" id="#main">
         <div class="row">
             <article class="  news_box top_news" id="front_page">
                 <img src="#" alt="..." class="news_photo">
@@ -112,8 +116,8 @@
 
     <section class="container feeds">
         <h2 class="">News</h2>
-        <div class="row">
-            <article class="news_box">
+        <div class="row feed_row">
+            <article class="news_box col-lg-4">
                 <div class="row">
                     <img src="#" alt="..." class="col-3 col-lg-7 news_photo">
                     <div class="news_texts_col col-9 col-lg-11">
@@ -127,7 +131,7 @@
                     </div>
                 </div>
             </article>
-            <article class=" news_box ">
+            <article class=" news_box col-lg-4">
                 <div class="row">
                     <img src="#" alt="..." class="col-3 col-lg-7 news_photo ">
                     <div class="news_texts_col col-9 col-lg-11">
@@ -142,7 +146,7 @@
                     </div>
                 </div>
             </article>
-            <article class=" news_box ">
+            <article class=" news_box col-lg-4">
                 <div class="row">
                     <img src="#" alt="..." class="col-3 col-lg-7 news_photo">
                     <div class="news_texts_col col-9 col-lg-11">
@@ -158,8 +162,20 @@
                 </div>
             </article>
         </div>
-    </section>
 
+
+        <nav>
+            <ul class="row justify-between gx-5">
+                <li class="col "><button class="prev" value="back">Previous</button></li>
+                <li class="col  text-end"><button class="next" value="next">Next</button> </li>
+            </ul>
+        </nav>
+            
+    </section>
+    
+    <footer class="footer">
+
+    </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/app.js"></script>

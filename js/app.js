@@ -3,7 +3,7 @@
 const any = 'q=fashion';
 
 async function getNews(search) {
-   let data = await fetch(`https://newsapi.org/v2/everything?${search}&apiKey=5dd14bd3df04419096998429a02b86fc&sortBy=popularity`)
+    let data = await fetch(`https://newsapi.org/v2/everything?${search}&apiKey=5dd14bd3df04419096998429a02b86fc&sortBy=popularity`)
         .then(res => res.json())
         .then(data => data)
         .catch(err => {
@@ -14,12 +14,12 @@ async function getNews(search) {
 
 async function setNews(node, data) {
     // grab each article of the home page
-    
+
     if (node.nodeName == "IMG") {
         node.src = "";
-    }else if (node.nodeName == "A") {
+    } else if (node.nodeName == "A") {
         node.href = data;
-    }else {
+    } else {
         node.innerText = data;
     }
     console.log(node.nodeName)
@@ -30,9 +30,9 @@ async function updateNodes(nodeSel) {
     try {
         let { articles } = await getNews("q=tech"),
             newsNode = document.querySelectorAll(`${nodeSel}`),
-            headline, news_text, category, news_photo, link , i = 0;
+            headline, news_text, category, news_photo, link, i = 0;
 
-        console.log(articles,newsNode)
+        console.log(articles, newsNode)
 
         for (node of newsNode) {
             // set each childs content
@@ -57,4 +57,39 @@ async function updateNodes(nodeSel) {
 
 }
 
-updateNodes('.feeds .news_box');
+// updateNodes('.feeds .news_box');
+
+
+
+// paginate feeds
+let feed_row = {
+    articles: document.querySelectorAll(".feed_row .news_box"),
+    index: 0,
+    updateFeeds(dir) {
+        let children = this.node.querySelectorAll(".news_box");
+        
+        //if  disable previous button
+        
+        //if to disable next button
+        
+        //make feeds fade out
+        this.node.classList.toggle("hide")
+        
+        // change feeds
+        
+
+        //fade-in
+        setTimeout(() => { this.node.classList.toggle("hide") }, 2500)
+    },
+    node: document.querySelector(".feed_row"),
+}
+
+function changeFeed(event) {
+    feed_row.updateFeeds(event.target.value.toLowerCase());
+}
+// previous and next buttons
+const prev = document.querySelector(".prev"),
+next = document.querySelector(".next");
+
+prev.addEventListener("click", changeFeed);
+next.addEventListener("click", changeFeed);
