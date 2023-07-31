@@ -39,9 +39,11 @@ ul {
 /***************************************************
 *TYPOGRAPHY
 ****************************************************/
-:root {
+:root ,:focus{
     font-size: 62.5;
     /* --main-theme:; */
+    /* --comp-theme: ; */
+    outline: none
 }
 
 .header {
@@ -52,6 +54,12 @@ ul {
     color: var(--main-theme, #cecdcd);
 }
 
+.nav a{
+    color: inherit;
+    outline: none;
+    border:none;
+    text-decoration: none;   
+}
 /***************************************************
 *LAYOUT
 ****************************************************/
@@ -65,18 +73,34 @@ background-color: var(--main-theme,#00f);
 color: white;
 }
 
-.navbar-toggler *{
+
+
+.navbar-toggler{
     color: #fff;
-    border-color:#fff;
-    background-image: none;
+    border: 0.2rem solid #fff;
+    
 
 }
+.navbar-toggler *{
+    background-image: none;
+}
+
+
+
 .nav_list > .list_item{
     padding:0.5rem 0;
     font-size: 1.2em;
     border-bottom: white 0.2em solid;
 }
 
+.nav_list >.list_item:not(:last-child):hover, .nav_list >.list_item:not(:last-child):focus-within{
+    color: var(--comp-theme,#f98602);
+    border-bottom-color: var(--comp-theme,#f98602);
+}
+
+.nav_list > .list_item:last-child{
+border-bottom: none; 
+}
 .news_photo {
     display: block;
     background-color: #ada7a7;
@@ -99,7 +123,7 @@ color: white;
 }
 
 .feeds .feed_row{
-   transition: opacity 2s ease-in-out 0.5s;
+   transition: opacity 2s ease-in-out;
 }
 
 .hide{
@@ -135,6 +159,11 @@ color: white;
     border-radius: 0.5rem;
 }
 
+
+
+.visually-hidden{
+    display: none;
+}
 /***************************************************
 *MEDIA QUERIES
 ****************************************************/
@@ -148,8 +177,6 @@ color: white;
         bottom: 0%;
         margin: 0.5rem;
     }
-
-    
 }
 
 /* large */
@@ -157,6 +184,8 @@ color: white;
     .nav_list > .list_item{
         flex: 1 0 10%;
         text-align: center;
+        margin: 0px 0.2rem;
+        width:min-content
     }
 
     .feeds .news_box .row{
