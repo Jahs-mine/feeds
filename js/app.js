@@ -5,7 +5,7 @@ const pageLinks = document.querySelectorAll(".nav .list_link"),
 // previous and next buttons
 const prev = document.querySelector(".prev"),
     next = document.querySelector(".next"),
-    more=document.querySelector(".more");
+    more = document.querySelector(".more");
 
 
 //add event listeners
@@ -14,37 +14,40 @@ for (const link of pageLinks) {
 }
 prev.addEventListener("click", changeFeed);
 next.addEventListener("click", changeFeed);
-more.addEventListener("click",  moreFeed);
+more.addEventListener("click", moreFeed);
 
 //search queries
-const today = new Date().toISOString(),
-    newsapi = `https://newsapi.org/v2/everthing?apiKey=5dd14bd3df04419096998429a02b86fc&language=en&from=${date}`,
-    tech = `${newsapi}&q=tech&category=technology`,
+const today = new Date(Date.now() - 604800000).toISOString(),
+    newsapi = `https://newsapi.org/v2/everything?apiKey=5dd14bd3df04419096998429a02b86fc&from=${today}`,
+    tech = `${newsapi}&q=tech`,
     politics = `${newsapi}&q=politics`,
     fashion = `${newsapi}&q=fashion`,
     health = `${newsapi}&q=health`,
     sports = `${newsapi}&q=sport`,
     trade = `${newsapi}&q=business`,
-    any = `${newsapi}`;
+    any = `https://newsapi.org/v2/top-headlines?apiKey=5dd14bd3df04419096998429a02b86fc&category=general&country=ng`;
 
 
 const NEWS_OBJECTS = [];
+
+console.log(getAndSetNews(politics))
 
 // news objects
 class NewsSection {
     constructor(ownQry, childQry, type = "home", url) {
         this.node = document.querySelector(ownQry)
         this.index = -1;
-        this.pageCoUnt = 1;
+        this.pageCount = 1;
         this.articles = [];
-        this.type = type;
         this.url = url
+        this.type = type;
         this.childQry = childQry;
         let thisObj = this;
         NEWS_OBJECTS.push(thisObj)
+        this.getArticles(this.url, this.type);
     }
-    async getArticles() {
-        this.articles.concat(getNews(`${url}&pageCount`).articles)
+    async getArticles(url, type) {
+        getAndSetNews(`${url}&page=${this.pageCount}`, this.type)
     }
 
     get children() {
@@ -67,7 +70,6 @@ class NewsSection {
         if (link = node.querySelector("a")) {
             // link.href = articles[this.index][]
         }
-
     }
 }
 
@@ -82,10 +84,12 @@ class OtherNewsSection extends NewsSection {
         if (this.index > -1 && this.children.length == 0) {
             count = this.index;
             add = 0;
-        } else { count = 12;
-        add=1 }
+        } else {
+            count = 12;
+            add = 1
+        }
 
-        console.log(count,add)
+        console.log(count, add)
         for (let i = 0; i < count; i++) {
             //Create a news article
             let article = document.createElement("article"),
@@ -116,13 +120,13 @@ class OtherNewsSection extends NewsSection {
             this.setNewsNode(article);
             this.node.appendChild(article)
 
-            this.index +=add
+            this.index += add
         }
     }
 }
 
 const home_feed_row = new NewsSection("#home_page .feed_row", ".feed_row .news_box", "home", any);
-home_feed_row.updateFeeds = function (dir = next) {
+home_feed_row.updateFeeds = function (dir = "next") {
     //if  disable previous button 
     let count = (dir == "next") ? 1 : -1;
     //if to disable next button
@@ -163,19 +167,25 @@ let tech_feed_row = new OtherNewsSection("#other_page .feed_row", ".feed_row .ne
 
 
 
-async function getNews(url) {
-    let data = await fetch(url)
+function getAndSetNews(url, type) {
+    fetch(url)
         .then(res => res.json())
-        .then(data => data)
-        .catch(err => {
-            throw err;
+        .then(data => {
+            NEWS_OBJECTS.forEach((obj) => {
+                console.log(type, data)
+                if (obj.type == type) {
+                    obj.articles.push(...data.articles)
+                }
+            })
         })
-    return data;
+        .catch(err => {
+            console.error(err);
+        })
 }
 
 //EVENT LISTENERS
 //change pages
-let current="home"
+let current = "home"
 function changePage(event) {
     // change page
     event.preventDefault();
@@ -216,11 +226,10 @@ function changeFeed(event) {
     home_feed_row.updateFeeds(event.target.value.toLowerCase());
 }
 
-function moreFeed(event){
+function moreFeed(event) {
     NEWS_OBJECTS.forEach((obj) => {
         if (obj.type == current) {
             obj.updateFeeds()
-            
             console.log(`added feed to ${obj.type}`, obj.children.length)
         }
     })

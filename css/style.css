@@ -39,9 +39,8 @@ ul {
 /***************************************************
 *TYPOGRAPHY
 ****************************************************/
-:root,
-:focus {
-    font-size: 62.5;
+:root{
+    font-size: 62.5%;
     /* --main-theme:; */
     /* --comp-theme: ; */
     outline: none
@@ -150,7 +149,7 @@ nav.navbar.nav {
 }
 
 .feeds .news_box .news_photo {
-    width: 4.5rem;
+    width: calc(4.5rem + 4.5vw);
     height: 4.5rem;
     margin: auto;
     align-self: center;
@@ -179,6 +178,8 @@ nav.navbar.nav {
     min-height: 4rem;
     padding:0.5rem 0;
     text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 .visually-hidden {
@@ -189,7 +190,12 @@ nav.navbar.nav {
 *MEDIA QUERIES
 ****************************************************/
 
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+    .feeds .news_box .news_photo {
+        width: 8rem;
+        height: 6rem;
+    }
+}
 
 /* medium */
 @media (min-width: 768px) {
@@ -208,7 +214,7 @@ nav.navbar.nav {
 /* large */
 @media (min-width: 992px) {
     .nav_list>.list_item {
-        flex: 1 0 10%;
+        flex: 1 0 33%;
         text-align: center;
         margin: 0px 0.2rem;
         width: min-content
