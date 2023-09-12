@@ -1,67 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
     <!-- navigation -->
-    <header class="">
-      <nav class="">
-        <a href=""><img src="" alt="The Blog Post" /></a>
-        <ul class="nav_list">
-          <li class="nav_list_item"><a href="" class="nav_link">Home</a></li>
-          <li class="nav_list_item"><a href="" class="nav_link">Sport</a></li>
-          <li class="nav_list_item"><a href="" class="nav_link">Food</a></li>
-          <li class="nav_list_item"><a href="" class="nav_link">Tech</a></li>
-          <li class="nav_list_item">
-            <a href="" class="nav_link">Politics</a>
-          </li>
-          <li class="nav_list_item"><a href="" class="nav_link">Fashion</a></li>
-          <li class="nav_list_item"><a href="" class="nav_link">Health</a></li>
-        </ul>
+    <header class="container_fluid">
+      <nav class="navbar row flex_between text_center">
+        <a href="" class="col_12 col_md_4"
+          ><img src="" alt="The Blog Post"
+        /></a>
+
+        <div class="col_12 col_md_8">
+          <ul class="nav_list row g_2">
+            <li class="nav_list_item"><a href="" class="nav_link">Home</a></li>
+            <li class="nav_list_item"><a href="" class="nav_link">Sport</a></li>
+            <li class="nav_list_item"><a href="" class="nav_link">Food</a></li>
+            <li class="nav_list_item"><a href="" class="nav_link">Tech</a></li>
+            <li class="nav_list_item">
+              <a href="" class="nav_link">Politics</a>
+            </li>
+            <li class="nav_list_item">
+              <a href="" class="nav_link">Fashion</a>
+            </li>
+            <li class="nav_list_item">
+              <a href="" class="nav_link">Health</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
-    <section class="">
-      <h1 class="">Welcome to The Blog Post</h1>
-      <span id="" class=""></span>
+    <section class="container_md">
+      <div class="row g_2">
+        <h1 class="col_7 greeting">Welcome to The Blog Post</h1>
+        <span id="date" class="date col_5 text_end">the date</span>
+      </div>
     </section>
 
-    <article class="news_article">
+    <!-- <article class="news_article">
       <div class="news_img">image</div>
       <h2 class="news_heading">heading</h2>
       <p class="news_preview">preview</p>
       <span class="news_author">author</span>
-    </article>
+    </article> -->
     <!-- Top News and recommend per category-->
-    <section class="recommend">
-      <div class="">
-        <article class="news_article">
-          <div class="news_img">image</div>
-          <h2 class="news_heading">heading</h2>
-          <p class="news_preview">preview</p>
-          <span class="news_author">author</span>
-        </article>
-      </div>
-      <div class="">
-        <article class="news_article">
-          <div class="news_img">image</div>
-          <h2 class="news_heading">heading</h2>
-          <span class="news_author">author</span>
-        </article>
-        <article class="news_article">
-          <div class="news_img">image</div>
-          <h2 class="news_heading">heading</h2>
-          <span class="news_author">author</span>
-        </article>
-        <article class="news_article">
-          <div class="news_img">image</div>
-          <h2 class="news_heading">heading</h2>
-          <span class="news_author">author</span>
-        </article>
+    <section class="recommend container_md">
+      <div class="row g_2">
+        <div class="col_12">
+          <article class="news_article jumbo">
+            <div class="news_img">image</div>
+            <div class="news_texts p_2">
+              <h2 class="news_heading">heading</h2>
+              <p class="news_preview">preview</p>
+              <span class="news_author">author</span>
+            </div>
+          </article>
+        </div>
+        <div class="col_12">
+          <div class="row g_2">
+            <article class="col_6 news_article politics">
+              <div class="news_img">image</div>
+              <div class="news_texts p_1">
+                <h2 class="news_heading">heading</h2>
+                <span class="news_author">author</span>
+              </div>
+            </article>
+            <article class="col_6 news_article sport">
+              <div class="news_img">image</div>
+              <div class="news_texts p_1">
+                <h2 class="news_heading">heading</h2>
+                <span class="news_author">author</span>
+              </div>
+            </article>
+            <article class="col_6 news_article tech">
+              <div class="news_img">image</div>
+              <div class="news_texts p_1">
+                <h2 class="news_heading">heading</h2>
+                <span class="news_author">author</span>
+              </div>
+            </article>
+            <article class="col_6 news_article fashion">
+              <div class="news_img">image</div>
+              <div class="news_texts p_1">
+                <h2 class="news_heading">heading</h2>
+                <span class="news_author">author</span>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -74,8 +104,8 @@
     </section>
 
     <!-- footer -->
-    <footer>
-        <!-- copyright and disclaimer -->
+    <footer class="container_fluid">
+      <!-- copyright and disclaimer -->
     </footer>
   </body>
 </html>
