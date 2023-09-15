@@ -11,115 +11,150 @@
       <!-- navigation -->
       <div class="container_md">
         <nav class="navbar row flex_between text_center p_1">
-        <a href="" class="col_12 col_md_4"
-          ><img src="" alt="The Blog Post"
-        /></a>
+          <a href="" class="col_12 col_md_4"
+            ><img src="" alt="The Blog Post"
+          /></a>
 
-        <div class="col_12 col_md_8">
-          <ul class="nav_list row g_2">
-            <li class="nav_list_item"><a href="" class="nav_link">Home</a></li>
-            <li class="nav_list_item"><a href="" class="nav_link">Sport</a></li>
-            <li class="nav_list_item"><a href="" class="nav_link">Food</a></li>
-            <li class="nav_list_item"><a href="" class="nav_link">Tech</a></li>
-            <li class="nav_list_item">
-              <a href="" class="nav_link">Politics</a>
-            </li>
-            <li class="nav_list_item">
-              <a href="" class="nav_link">Fashion</a>
-            </li>
-            <li class="nav_list_item">
-              <a href="" class="nav_link">Health</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+          <div class="col_12 col_md_8">
+            <ul class="nav_list row g_2">
+              <li class="nav_list_item">
+                <a href="" class="nav_link page_link" data-page="home">Home</a>
+              </li>
+              <li class="nav_list_item">
+                <a href="" class="nav_link page_link" data-page="sport"
+                  >Sport</a
+                >
+              </li>
+              <li class="nav_list_item">
+                <a href="" class="nav_link page_link" data-page="food">Food</a>
+              </li>
+              <li class="nav_list_item">
+                <a href="" class="nav_link page_link" data-page="tech">Tech</a>
+              </li>
+              <li class="nav_list_item">
+                <a href="" class="nav_link page_link" data-page="politics"
+                  >Politics</a
+                >
+              </li>
+              <li class="nav_list_item">
+                <a href="" class="nav_link page_link" data-page="fashion"
+                  >Fashion</a
+                >
+              </li>
+              <li class="nav_list_item">
+                <a href="" class="nav_link page_link" data-page="health"
+                  >Health</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-      
     </header>
-
-    <section class="container_md">
-      <div class="row g_2">
-        <h1 class="col_7 greeting">Welcome to The Blog Post</h1>
-        <span id="date" class="date col_5 text_end"></span>
-      </div>
-    </section>
-
-   
-    <section class="recommend container_md">
-      <div class="row g_2">
-        <div class="col_12 col_x_lg_6">
-          <article class="news_article jumbo">
-            <div class="news_img">image</div>
-            <div class="news_texts p_2">
-              <a href="" class="news_link"><h2 class="news_heading">heading</h2></a>
-              <p class="news_preview">preview</p>
-              <span class="news_author">author</span>
-            </div>
-          </article>
+    <div id="home_page">
+      <section class="container_md">
+        <div class="row g_2">
+          <h1 class="col_7 greeting">Welcome to The Blog Post</h1>
+          <span id="date" class="date col_5 text_end"></span>
         </div>
-        <div class="col_12 col_x_lg_6">
-          <div class="row g_2">
-            <article class="col_6 news_article politics">
+      </section>
+
+      <section class="recommend container_md">
+        <div class="row g_2">
+          <div class="col_12 col_x_lg_6">
+            <article class="news_article jumbo">
               <div class="news_img">image</div>
-              <div class="news_texts p_1">
-                <a href="" class="news_link"><h2 class="news_heading">heading</h2></a>
-                <span class="news_author">author</span>
-              </div>
-            </article>
-            <article class="col_6 news_article sport">
-              <div class="news_img">image</div>
-              <div class="news_texts p_1">
-                <a href="" class="news_link"><h2 class="news_heading">heading</h2></a>
-                <span class="news_author">author</span>
-              </div>
-            </article>
-            <article class="col_6 news_article tech">
-              <div class="news_img">image</div>
-              <div class="news_texts p_1">
-                <a href="" class="news_link"><h2 class="news_heading">heading</h2></a>
-                <span class="news_author">author</span>
-              </div>
-            </article>
-            <article class="col_6 news_article fashion">
-              <div class="news_img">image</div>
-              <div class="news_texts p_1">
-                <a href="" class="news_link"><h2 class="news_heading">heading</h2></a>
+              <div class="news_texts p_2">
+                <a href="" class="news_link"
+                  ><h2 class="news_heading">heading</h2></a
+                >
+                <p class="news_preview">preview</p>
                 <span class="news_author">author</span>
               </div>
             </article>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- paginated list of news -->
-    <section class="container_md">
-      <div class="news_page">
-        <div class="row g_2">
-          <div class="col_12">
-            <article class="news_article row flex_between g_2">
-              <div class="news_img col_4 col_md_3">image</div>
-              <div class="news_texts col_8 col_md_9">
-                <div class="row g_2 align_between">
-                  <a href="" class="news_link col_12 col_md_6"><h2 class="news_heading">heading</h2></a>
-                  <p class="news_preview col_12 col_md_6">preview</p>
-                  <span class="news_author col_12 col_md_6">author</span>
+          <div class="col_12 col_x_lg_6">
+            <div class="row g_2">
+              <article class="col_6 news_article politics">
+                <div class="news_img">image</div>
+                <div class="news_texts p_1">
+                  <a href="" class="news_link"
+                    ><h2 class="news_heading">heading</h2></a
+                  >
+                  <span class="news_author">author</span>
                 </div>
-              </div>
-            </article>
-          </div>  
+              </article>
+              <article class="col_6 news_article sport">
+                <div class="news_img">image</div>
+                <div class="news_texts p_1">
+                  <a href="" class="news_link"
+                    ><h2 class="news_heading">heading</h2></a
+                  >
+                  <span class="news_author">author</span>
+                </div>
+              </article>
+              <article class="col_6 news_article tech">
+                <div class="news_img">image</div>
+                <div class="news_texts p_1">
+                  <a href="" class="news_link"
+                    ><h2 class="news_heading">heading</h2></a
+                  >
+                  <span class="news_author">author</span>
+                </div>
+              </article>
+              <article class="col_6 news_article fashion">
+                <div class="news_img">image</div>
+                <div class="news_texts p_1">
+                  <a href="" class="news_link"
+                    ><h2 class="news_heading">heading</h2></a
+                  >
+                  <span class="news_author">author</span>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <button type="button">Previous</button>
-      <button type="button">Next</button>
-    </section>
+      <!-- paginated list of news -->
+      <section class="container_md">
+        <div class="news_page">
+          <div class="row g_2">
+            <div class="col_12">
+              <article class="news_article row flex_between g_2">
+                <div class="news_img col_4 col_md_3">image</div>
+                <div class="news_texts col_8 col_md_9">
+                  <div class="row g_2 align_between">
+                    <a href="" class="news_link col_12 col_md_6"
+                      ><h2 class="news_heading">heading</h2></a
+                    >
+                    <p class="news_preview col_12 col_md_6">preview</p>
+                    <span class="news_author col_12 col_md_6">author</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
 
-    <!-- footer -->
-    <footer class="container_fluid">
-      <!-- copyright and disclaimer -->
-    </footer>
+        <button type="button">Previous</button>
+        <button type="button">Next</button>
+      </section>
+
+      <!-- footer -->
+      <footer class="container_fluid">
+        <!-- copyright and disclaimer -->
+      </footer>
+    </div>
+    <div id="other_page" hidden>
+      <section class="container_md">
+        <div class="news_page">
+          <div class="row g_2"></div>
+        </div>
+      </section>
+    </div>
 
     <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
