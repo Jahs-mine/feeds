@@ -266,21 +266,17 @@ DOMPage.prototype.createArticle = function (article) {
         desc = div.querySelector(".news_preview"),
         author = div.querySelector(".news_author");
     if(article){
-        if (link) {
+  
         link.href = article.link
-    }
-    if (image) {
-        image.style.backgroundImage = `url${article.image}`;
-    }
-    if (title) {
-        title.innerText = article.title
-    }
-    if (desc) {
+    
+        image.style.background = `url(${article.image})`+ image.style.background;
+  
+      title.innerText = article.title  
+    
         desc.innerText = article.desc
-    }
-    if (author) {
+    
         author.innerText = article.author
-    }
+
     }
     
 
