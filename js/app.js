@@ -99,6 +99,7 @@ function changePage(event) {
         
         DOMPage.DOMpages.forEach(_page => {
             if (_page.type == page) {
+                display.innerHTML="";
                 display.append(_page.page)
     console.log(_page)
             }
@@ -151,7 +152,7 @@ class NewsPage {
                 }
             )
 
-        wait(!this.articles[0], 3000)
+       
     }
     get type() {
         return this._type
@@ -223,7 +224,6 @@ class DOMPage {
         let thisNews = NewsPage.newsPages.find(news => news.type == type);
         if(!thisNews.articles[this.articleIndex+1]){
             thisNews.fetchArticles();
-            wait(!thisNews.articles[this.articleIndex+1],2000)
         }
         return thisNews.articles.map(article => this.createArticle(article),thisObj)
     }
@@ -231,7 +231,7 @@ class DOMPage {
         let endInd = this.articleIndex + 9;
         let articles = this.articles;
 
-    
+
         for (; this.articleIndex <= endInd; this.articleIndex++) {
             if (!articles[this.articleIndex]) { break }
             this._page.append(articles[this.articleIndex]);
@@ -270,7 +270,7 @@ DOMPage.prototype.createArticle = function (article) {
         link.href = article.link
     }
     if (image) {
-        image.src = article.image
+        image.style.backgroundImage = `url${article.image}`;
     }
     if (title) {
         title.innerText = article.title
